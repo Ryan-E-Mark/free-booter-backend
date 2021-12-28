@@ -1,0 +1,25 @@
+{
+  "name": "free-booter-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.2",
+    "knex": "^0.95.15",
+    "node": "^17.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.5.0",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "reset": "npm run rollback && npm run migrate && npm run seed",
+    "seed": "knex seed run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
