@@ -7,7 +7,8 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "knex": "^0.95.15",
-    "node": "^17.3.0"
+    "node": "^17.3.0",
+    "pg": "^8.7.1"
   },
   "devDependencies": {
     "eslint": "^8.5.0",
@@ -18,7 +19,15 @@
     "migrate": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
     "reset": "npm run rollback && npm run migrate && npm run seed",
-    "seed": "knex seed run"
+    "seed": "knex seed run",
+    "migrateh": "heroku run knex migrate:latest -a free-booter-backend",
+    "rollbackh": "heroku run knex migrate:rollback -a free-booter-backend",
+    "seedh": "heroku run knex seed:run -a free-booter-backend",
+    "deploy": "git push heroku main"
+  },
+  "engines": {
+    "node": "14.15.4",
+    "npm": "6.14.11"
   },
   "keywords": [],
   "author": "",
