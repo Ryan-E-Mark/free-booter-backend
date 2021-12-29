@@ -5,6 +5,7 @@ exports.up = async (knex) => {
         boards.increments('board_id')
         boards.string('board_name', 200).notNullable()
         boards.string('board_size', 200).notNullable()
+        boards.string('img')
         boards.string('in_stock').notNullable()
     })
 };

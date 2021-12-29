@@ -21,7 +21,7 @@
     "migrate": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
     "reset": "npm run rollback && npm run migrate && npm run seed",
-    "seed": "knex seed run",
+    "seed": "knex seed:run",
     "migrateh": "heroku run knex migrate:latest -a free-booter-backend",
     "rollbackh": "heroku run knex migrate:rollback -a free-booter-backend",
     "seedh": "heroku run knex seed:run -a free-booter-backend",
