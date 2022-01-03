@@ -6,7 +6,7 @@ async function getAll() {
 }
 
 async function getById(id) {
-    const result = await db('boards').where('board_id', id)
+    const result = await db('boards').where('board_id', id).first()
     return result
 }
 
