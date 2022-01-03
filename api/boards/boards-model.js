@@ -10,7 +10,13 @@ async function getById(id) {
     return result
 }
 
+async function postBoard(board) {
+    const result = await db('boards as b').insert(board, ['b.board_id', 'b.board_name', 'b.board_size', 'b.img', 'b.description', 'b.in_stock']).first()
+    return result
+}
+
 module.exports = {
     getAll,
     getById,
+    postBoard,
 }

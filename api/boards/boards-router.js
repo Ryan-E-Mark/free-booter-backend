@@ -21,4 +21,13 @@ router.get('/:id', async (req, res, next) => {
     }
 })
 
+router.post('/', async (req, res, next) => {
+    try {
+        const newBoard = await Boards.postBoard(req.body)
+        res.status(201).json(newBoard)
+    } catch (err) {
+        next(err)
+    }
+})
+
 module.exports = router
