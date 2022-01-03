@@ -4,8 +4,9 @@ exports.up = async (knex) => {
     .createTable('boards', (boards) => {
         boards.increments('board_id')
         boards.string('board_name', 200).notNullable()
-        boards.string('board_size', 200).notNullable()
+        boards.string('board_size', 200)
         boards.string('img')
+        boards.string('description', 200)
         boards.string('in_stock').notNullable()
     })
 };
