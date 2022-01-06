@@ -30,4 +30,22 @@ router.post('/', async (req, res, next) => {
     }
 })
 
+router.put('/:id', async (req, res, next) => {
+    try {
+        const updatedBoard = await Boards.updateById(req.body, req.params.id)
+        res.status(200).json(updatedBoard)
+    } catch (err) {
+        next(err)
+    }
+})
+
+router.delete('/:id', async (req, res, next) => {
+    try {
+        const deletedBoard = await Boards.deleteById(req.params.id)
+        res.status(200).json({message: `Board id:${req.params.id} has been deleted`, deletedBoard})
+    } catch (err) {
+        next(err)
+    }
+})
+
 module.exports = router
