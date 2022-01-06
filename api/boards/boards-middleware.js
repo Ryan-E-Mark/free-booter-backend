@@ -1,0 +1,1 @@
+const Boards = require('./boards-model')
