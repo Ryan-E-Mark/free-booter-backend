@@ -12,8 +12,16 @@ exports.up = async (knex) => {
         products.string('description', 200)
         products.string('in_stock').notNullable()
     })
+    .createTable('users', (users) => {
+      users.increments('user_id')
+      users.string('username', 200).notNullable()
+      users.string('password', 200).notNullable()
+      users.string('email', 200)
+  })
 };
 
 exports.down = async (knex) => {
-  await knex.schema.dropTableIfExists('products')
+  await knex.schema
+  .dropTableIfExists('users')
+  .dropTableIfExists('products')
 };
