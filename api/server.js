@@ -5,6 +5,11 @@ const userRouter = require('./users/users-router');
 const server = express();
 server.use(express.json());
 
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+})
+
 server.use('/api/products', productsRouter);
 server.use('/api/users', userRouter);
 
